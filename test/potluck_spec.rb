@@ -20,7 +20,7 @@ describe Potluck do
       expect(potluck.date).to eq("7-13-18")
     end
 
-    it 'has dishes' do
+    it 'stars with no dishes' do
       expect(potluck.dishes).to eq([])
     end
   end
