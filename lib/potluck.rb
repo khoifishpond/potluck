@@ -21,12 +21,18 @@ class Potluck
     
     categories.each do |category|
       dish_names = []
-      
+
       @dishes.select do |dish|
         dish_names << dish.name if dish.category == category
       end
       menu[category] = dish_names.sort
     end
     menu
+  end
+
+  def ratio(category)
+    dish_count = @dishes.count { |dish| dish.category == category }
+
+    dish_count.fdiv(@dishes.size) * 100
   end
 end
