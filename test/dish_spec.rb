@@ -9,8 +9,8 @@ describe Dish do
       expect(dish.name).to eq("Couscous salad")
     end
 
-    it 'has a type' do
-      expect(dish.type).to eq(:appetizer)
+    it 'has a category' do
+      expect(dish.category).to eq(:appetizer)
     end
   end
 end
