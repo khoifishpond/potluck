@@ -49,5 +49,9 @@ describe Potluck do
       potluck.add_dish(candy_salad)
       expect(potluck.dishes).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs, candy_salad])
     end
+
+    it 'can get all dishes from a category' do
+      expect(potluck.get_all_from_category(:appetizer)).to eq([couscous_salad, summer_pizza])
+    end
   end
 end
