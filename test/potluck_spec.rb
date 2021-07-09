@@ -32,20 +32,22 @@ describe Potluck do
     end
 
     it 'can add a dish' do
+      expect(potluck.dishes).to eq([])
+
       potluck.add_dish(couscous_salad)
-      expect(potluck.add_dish(couscous_salad)).to eq([couscous_salad])
+      expect(potluck.dishes).to eq([couscous_salad])
 
       potluck.add_dish(summer_pizza)
-      expect(potluck.add_dish(summer_pizza)).to eq([couscous_salad, summer_pizza])
+      expect(potluck.dishes).to eq([couscous_salad, summer_pizza])
 
       potluck.add_dish(roast_pork)
-      expect(potluck.add_dish(roast_pork)).to eq([couscous_salad, summer_pizza, roast_pork])
+      expect(potluck.dishes).to eq([couscous_salad, summer_pizza, roast_pork])
 
       potluck.add_dish(cocktail_meatballs)
-      expect(potluck.add_dish(cocktail_meatballs)).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs])
+      expect(potluck.dishes).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs])
 
       potluck.add_dish(candy_salad)
-      expect(potluck.add_dish(candy_salad)).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs, candy_salad])
+      expect(potluck.dishes).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs, candy_salad])
     end
   end
 end
