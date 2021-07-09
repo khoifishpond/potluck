@@ -21,7 +21,10 @@ describe Potluck do
 
   context 'Dishes' do
     couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    roast_pork = Dish.new("Roast Pork", :entree)
     cocktail_meatballs = Dish.new("Cocktail Meatballs", :entree)
+    candy_salad = Dish.new("Candy Salad", :dessert)
 
     it 'exists' do
       expect(couscous_salad).to be_a(Dish)
@@ -30,10 +33,19 @@ describe Potluck do
 
     it 'can add a dish' do
       potluck.add_dish(couscous_salad)
-      potluck.add_dish(cocktail_meatballs)
+      expect(potluck.add_dish(couscous_salad)).to eq([couscous_salad])
 
-      expect(potluck.dishes).to eq([couscous_salad, cocktail_meatballs])
-      expect(potluck.dishes.length).to eq(2)
+      potluck.add_dish(summer_pizza)
+      expect(potluck.add_dish(summer_pizza)).to eq([couscous_salad, summer_pizza])
+
+      potluck.add_dish(roast_pork)
+      expect(potluck.add_dish(roast_pork)).to eq([couscous_salad, summer_pizza, roast_pork])
+
+      potluck.add_dish(cocktail_meatballs)
+      expect(potluck.add_dish(cocktail_meatballs)).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs])
+
+      potluck.add_dish(candy_salad)
+      expect(potluck.add_dish(candy_salad)).to eq([couscous_salad, summer_pizza, roast_pork, cocktail_meatballs, candy_salad])
     end
   end
 end
