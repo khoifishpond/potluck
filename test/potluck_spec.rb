@@ -71,5 +71,9 @@ describe Potluck do
       expect(potluck.menu[:entree]).to eq([cocktail_meatballs.name, roast_pork.name])
       expect(potluck.menu[:dessert]).to eq([candy_salad.name])
     end
+
+    it 'can calculate ratios of categories' do
+      expect(potluck.ratio(:appetizer)).to eq(50.0)
+    end
   end
 end
