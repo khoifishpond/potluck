@@ -8,5 +8,6 @@ class Potluck
 
   def add_dish(dish)
     @dishes << dish
+    @dishes
   end
 end
