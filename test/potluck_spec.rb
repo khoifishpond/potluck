@@ -56,4 +56,17 @@ describe Potluck do
       expect(potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
     end
   end
+
+  context 'Menu' do
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    summer_pizza = Dish.new("Summer Pizza", :appetizer)
+    roast_pork = Dish.new("Roast Pork", :entree)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entree)
+    candy_salad = Dish.new("Candy Salad", :dessert)
+    bean_dip = Dish.new("Bean Dip", :appetizer)
+
+    it 'can sort as menu items' do
+      expect(potluck.menu).to be_a(Hash)
+    end
+  end
 end
