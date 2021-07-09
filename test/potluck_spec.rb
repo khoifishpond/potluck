@@ -33,6 +33,7 @@ describe Potluck do
       potluck.add_dish(cocktail_meatballs)
 
       expect(potluck.dishes).to eq([couscous_salad, cocktail_meatballs])
+      expect(potluck.dishes.length).to eq(2)
     end
   end
 end
