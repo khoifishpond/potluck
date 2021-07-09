@@ -18,4 +18,21 @@ describe Potluck do
       expect(potluck.dishes).to eq([])
     end
   end
+
+  context 'Dishes' do
+    couscous_salad = Dish.new("Couscous Salad", :appetizer)
+    cocktail_meatballs = Dish.new("Cocktail Meatballs", :entree)
+
+    it 'exists' do
+      expect(couscous_salad).to be_a(Dish)
+      expect(cocktail_meatballs).to be_a(Dish)
+    end
+
+    it 'can add a dish' do
+      potluck.add_dish(couscous_salad)
+      potluck.add_dish(cocktail_meatballs)
+
+      expect(potluck.dishes).to eq([couscous_salad, cocktail_meatballs])
+    end
+  end
 end
