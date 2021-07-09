@@ -52,7 +52,7 @@ describe Potluck do
 
     it 'can get all dishes from a category' do
       expect(potluck.get_all_from_category(:appetizer)).to eq([couscous_salad, summer_pizza])
-      expect(potluck.get_all_from_category(:appetizer).first).to eq([couscous_salad])
+      expect(potluck.get_all_from_category(:appetizer).first).to eq(couscous_salad)
       expect(potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
     end
   end
