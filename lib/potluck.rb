@@ -16,16 +16,12 @@ class Potluck
   end
 
   def menu
-    categories = (@dishes.map { |dish| dish.category }).uniq
     menu = Hash.new
-    
-    categories.each do |category|
-      dish_names = []
 
-      @dishes.select do |dish|
-        dish_names << dish.name if dish.category == category
-      end
-      menu[category] = dish_names.sort
+    @dishes.each do |dish|
+      menu[dish.category] ||= []
+      menu[dish.category] << dish.name
+      menu[dish.category].sort!
     end
     menu
   end
